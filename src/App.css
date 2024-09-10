@@ -1,38 +1,151 @@
 .App {
   text-align: center;
+  font-family: "Cinzel", serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Heading - Title */
+.App h1 {
+  font-size: 2.5rem; 
+  color: #ff5733; 
+  margin-bottom: 20px; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* text shadow */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Search Input */
+.search-container {
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Film Cards Container */
+.film-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Card Tiles */
+.film-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.film-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Bigger shadow when on card */
+  transform: translateY(-2px); /* Lift the card :) */
+}
+
+.film-card h2 {
+  margin-top: 0;
+}
+
+/* Film Details */
+.film-details {
+  font-family: "Cinzel", serif;
+  font-size: 18px;
+  text-align: left;
+  padding: 20px;
+}
+
+.film-details h2 {
+  font-size: 1.8rem; 
+}
+
+/* Read More Button */
+.read-more {
+  margin-top: 10px;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 8px 20px;
+  background-color: #ff5733;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: "Cinzel", serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden; /* Ensure the icon stays within the button */
 }
 
-.App-link {
-  color: #61dafb;
+/* Icon for button (optional) */
+.read-more::after {
+  content: '→'; 
+  font-size: 18px;
+  margin-left: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Hover Effects */
+.read-more:hover {
+  background-color: #ff704d; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
+  transform: translateY(-4px); 
+}
+
+/* Change icon color and transform on hover by making it white ish*/
+.read-more:hover::after {
+  color: #fff; 
+  transform: translateX(5px); 
+}
+
+/* Back Button for Read more Page*/
+.back-button-container {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  margin-top: 40px; /* Increase the margin to push the button lower */
+}
+
+/* Back Button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Cinzel", serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Arrow Icon */
+.back-button::before {
+  content: '←'; 
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+/* Hover Effects */
+.back-button:hover {
+  background-color: #ff704d;
+  transform: translateY(-2px);
+}
+
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .search-input {
+    width: 90%;
   }
 }
